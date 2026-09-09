@@ -1,40 +1,43 @@
 # 🚀 Small PRJ
 
-> **Small projects. Big ideas. One step closer to building intelligent systems. 🧠⚡**
+> **Small projects. Big ideas. Real experiments. One step closer to building intelligent systems. 🧠⚡**
 
-Welcome to **Small PRJ** — a growing collection of AI experiments,
-projects, and ideas.
+Welcome to **Small PRJ** — my evolving playground for exploring **AI, intelligent systems, automation, and software engineering**.
 
-This repository is just the beginning.
+This repository starts small, but the idea behind it is much bigger.
 
-Soon, this space will evolve into a collection of multiple projects
-covering **LangGraph, AI Agents, LLMs, RAG, tool calling, memory,
-automation, multi-agent systems, and more.**
-
-Every project will explore a different idea, solve a different problem,
-and add another piece to the bigger picture.
+Every project here is an experiment — a place to learn a concept, build something practical, break things, understand why they broke, and build it better.
 
 ---
 
-## 🌱 From One Project to Many
-
-What starts as a small experiment can become something much bigger.
+## 🧠 The Bigger Picture
 
 ```text
-                 🚀 SMALL PRJ
-                      │
-        ┌─────────────┼─────────────┐
-        │             │             │
-        ▼             ▼             ▼
-   🤖 AI Agents    🔗 LangGraph    📚 RAG
-        │             │             │
-        ▼             ▼             ▼
-   🛠️ Tools       🧠 Memory      🔍 Search
-        │             │             │
-        └─────────────┼─────────────┘
-                      │
-                      ▼
-                ⚡ MORE PROJECTS
-                      │
-                      ▼
-               🧠 AI ECOSYSTEM
+                         🚀 SMALL PRJ
+                              │
+                ┌─────────────┼─────────────┐
+                │             │             │
+                ▼             ▼             ▼
+           🤖 AI AGENTS   🔗 LANGGRAPH    🧠 LLMs
+                │             │             │
+                ▼             ▼             ▼
+           🛠️ TOOLS       🔄 WORKFLOWS    💬 PROMPTS
+                │             │             │
+                ├─────────────┼─────────────┤
+                │             │             │
+                ▼             ▼             ▼
+             📚 RAG       🧠 MEMORY      🔍 SEARCH
+                │             │             │
+                └─────────────┼─────────────┘
+                              │
+                              ▼
+                       🤝 MULTI-AGENTS
+                              │
+                              ▼
+                         ⚙️ AUTOMATION
+                              │
+                              ▼
+                      🌐 INTELLIGENT APPS
+                              │
+                              ▼
+                        🚀 MORE TO COME
