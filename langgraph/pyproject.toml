@@ -1,7 +1,7 @@
 [project]
-name = "30-07-2025-langgraph"
-version = "0.1.0"
-description = "LangGraph agent for stock screening with Ollama"
+name = "signalgraph"
+version = "0.2.0"
+description = "SignalGraph: Structured stock screening with LangGraph and Streamlit"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -9,6 +9,10 @@ dependencies = [
     "langchain>=0.3.27",
     "langchain-ollama>=0.3.6",
     "langgraph>=0.6.1",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "plotly>=5.24.0",
+    "streamlit>=1.40.0",
     "yfinance>=0.2.65",
 ]
 
@@ -17,4 +21,5 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-py-modules = ["flow", "tool"]
+py-modules = ["flow", "tool", "pipeline", "app"]
+
