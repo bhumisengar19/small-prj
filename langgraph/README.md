@@ -1,12 +1,12 @@
 # 📊 SignalGraph
 *Trace the signal. Understand the decision.*
 
-[![Python Version](https://img.shields.io/badge/Python-3.13+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6+-FF6F00?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain-ai.github.io/langgraph/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Plotly](https://img.shields.io/badge/Plotly-5.24+-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/)
-[![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.ai/)
-[![Package Manager](https://img.shields.io/badge/uv-Package_Manager-DE5FE9?style=for-the-badge&logo=astral&logoColor=white)](https://docs.astral.sh/uv/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
 
 A clean, developer-focused financial research dashboard and agentic screening pipeline built with **LangGraph**, **Streamlit**, **Plotly**, and **Yahoo Finance**.
 
@@ -42,11 +42,18 @@ Rather than an opaque AI black-box, **SignalGraph** visualizes every node in the
 ## 📂 Project Structure
 
 ```text
+├── .github/workflows/ci.yml # GitHub Actions Continuous Integration
+├── tests/                  # Unit test suite
+│   ├── test_pipeline.py    # Pipeline math, RSI, MACD, and graph tests
+│   └── test_tools.py       # Screener and tool validation tests
 ├── app.py                  # Streamlit web dashboard (SignalGraph UI)
 ├── pipeline.py             # LangGraph 5-node screening workflow & state machine
 ├── flow.py                 # Conversational CLI agent with checkpointer memory
 ├── tool.py                 # Financial tools (screener, ticker details, news)
 ├── pyproject.toml          # Project configuration & dependencies
+├── requirements.txt        # Standard pip requirements
+├── .env.example            # Sample environment configuration
+├── LICENSE                 # MIT License
 ├── README.md               # Documentation
 └── uv.lock                 # Dependency lockfile
 ```
@@ -57,9 +64,14 @@ Rather than an opaque AI black-box, **SignalGraph** visualizes every node in the
 
 ### 1. Install Dependencies
 
-Using [uv](https://docs.astral.sh/uv/):
+Using [uv](https://docs.astral.sh/uv/) (recommended):
 ```bash
 uv sync
+```
+
+Or using standard `pip`:
+```bash
+pip install -r requirements.txt
 ```
 
 ### 2. Launch the Streamlit Dashboard
@@ -81,7 +93,28 @@ uv run flow.py
 
 ---
 
+## 🧪 Running Tests
+
+Run the automated test suite with `pytest`:
+
+```bash
+uv run pytest -v
+```
+
+Or with standard `pytest`:
+```bash
+pytest -v tests/
+```
+
+---
+
 ## ⚙️ Configuration
+
+Copy `.env.example` to `.env` to configure local settings:
+
+```bash
+cp .env.example .env
+```
 
 To customize the local Ollama model for the CLI agent:
 
@@ -96,4 +129,4 @@ uv run flow.py
 
 ## 📄 License
 
-Open-source under MIT / Apache-2.0. For educational and research purposes only. Not individualized financial advice.
+Open-source under the [MIT License](LICENSE). For educational and research purposes only. Not individualized financial advice.

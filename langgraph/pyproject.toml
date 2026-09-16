@@ -14,6 +14,12 @@ dependencies = [
     "plotly>=5.24.0",
     "streamlit>=1.40.0",
     "yfinance>=0.2.65",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
 ]
 
 [build-system]
@@ -22,4 +28,8 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 py-modules = ["flow", "tool", "pipeline", "app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
 

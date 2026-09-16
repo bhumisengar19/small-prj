@@ -39,12 +39,17 @@ class StockScreenState(TypedDict):
 
 def compute_rsi(prices: pd.Series, window: int = 14) -> pd.Series:
     """Calculates Relative Strength Index (RSI)."""
+    if len(prices) < 2:
+        return pd.Series(50.0, index=prices.index)
     delta = prices.diff()
-    gain = (delta.where(delta > 0, 0)).rolling(window=window).mean()
-    loss = (-delta.where(delta < 0, 0)).rolling(window=window).mean()
-    rs = gain / (loss.replace(0, np.nan))
-    rsi = 100 - (100 / (1 + rs))
-    return rsi.fillna(50)
+    gain = (delta.where(delta > 0, 0.0)).rolling(window=window, min_periods=1).mean()
+    loss = (-delta.where(delta < 0, 0.0)).rolling(window=window, min_periods=1).mean()
+    
+    # Avoid division by zero; where loss == 0 & gain > 0, RSI is 100
+    rs = gain / loss.replace(0, np.nan)
+    rsi = 100.0 - (100.0 / (1.0 + rs))
+    rsi = rsi.where(~((loss == 0) & (gain > 0)), 100.0)
+    return rsi.fillna(50.0)
 
 
 def compute_macd(prices: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9):
@@ -368,7 +373,7 @@ def generate_decision_node(state: StockScreenState) -> Dict[str, Any]:
     if market_data.get("empty"):
         decision = {
             "verdict": "AVOID",
-            "score": 0.0,
+            "composite_score": 0.0,
             "reasons": ["Unable to retrieve market price data for the specified ticker."]
         }
         duration_ms = int((time.time() - t0) * 1000)
