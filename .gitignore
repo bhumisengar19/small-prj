@@ -1,0 +1,32 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment and Secrets
+.env
+*.env.local
+
+# Testing & Caching
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime and scratch data
+output.json
+toolhelpers.txt
+*.log
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
